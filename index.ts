@@ -1,5 +1,3 @@
-export class Main { 
-    constructor() {
-        console.log('Main constructor');
-    }
+export class Main {
+
 }
