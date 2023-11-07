@@ -6,7 +6,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: '/node_modules/'
             }
@@ -20,7 +19,9 @@ module.exports = {
         path: path.resolve(__dirname, 'bin')
     },
     devServer: {
-        contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'bin')], // both src and output dirs
+        static: {
+          directory: path.join(__dirname, "public")
+        },
         compress: true,
         port: 7777
     }
