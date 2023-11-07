@@ -16,3 +16,10 @@
 - Browsers understand Javascript, but not TypeScript
 - Results may be different based on compiler version.
 - Can be executed automatically by watching for changes in files.
+
+## `tsconfig.json`
+
+- Configuration file for TypeScript compiler
+- Can be generated automatically by running `tsc --init`
+- Can be used to specify which files to compile, where to output, and which version of JavaScript to output.
+
