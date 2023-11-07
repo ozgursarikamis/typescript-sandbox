@@ -9,3 +9,10 @@
 > Global Version: **Fallback** for when there is not a local version!
 
 > Embedded Version: Fixed version built into some software (i.e., VSCode, Webstorm)
+
+## What is `TypeScript` Compiler
+
+- Turns TypeScript into browser-compatible language
+- Browsers understand Javascript, but not TypeScript
+- Results may be different based on compiler version.
+- Can be executed automatically by watching for changes in files.
