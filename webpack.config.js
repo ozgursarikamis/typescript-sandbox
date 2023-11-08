@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.ts',
@@ -14,6 +15,7 @@ module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
     },
+    devtool: "eval-source-map",
     output: {
         filename: './bundle.js',
         path: path.resolve(__dirname, 'bin')
@@ -22,7 +24,11 @@ module.exports = {
         static: {
           directory: path.join(__dirname, "public")
         },
-        compress: true,
-        port: 7777
-    }
+        // compress: true,
+        port: 7777,
+        hot: true
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ]
 };
