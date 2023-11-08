@@ -1,0 +1,11 @@
+{
+    "configurations": [{
+        "type": "msedge",
+        "request": "launch",
+        "name": "Launch Chrome against localhost",
+        "url": "http://localhost:7777",
+        "webRoot": "${workspaceFolder}",
+        "sourceMaps": true,
+        "trace": true,
+    }]
+}
