@@ -12,10 +12,13 @@ let config = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
+        clean: true, // clean dist folder before build
     },
     devtool: "inline-source-map",
     mode: 'development',
     devServer: {
+        // liveReload: false,
+        watchFiles: ['src/**/', 'index.html'], // watch for changes in these files
         static: './dist'
     },
     module: {
