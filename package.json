@@ -7,6 +7,7 @@
     "watch": "tsc --watch",
     "webpack": "webpack",
     "dev": "webpack serve --open",
+    "lint": "eslint src/**/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +16,9 @@
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",
     "@tsconfig/recommended": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",
