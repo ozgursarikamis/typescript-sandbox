@@ -14,6 +14,20 @@ let config = {
     devServer: {
         static: './dist'
     },
+    module: {
+        rules: [
+            {
+                test: '/\.js$/', // regex
+                exclude: /node_modules/, // ignore node_modules folder
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html' // source html
