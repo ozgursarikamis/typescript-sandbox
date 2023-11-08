@@ -1,2 +1,4 @@
-const message: string = 'Hello World';
-console.log(message);
+import { emphasizeString } from '../lib/language.js';
+
+const language = emphasizeString(' TypeScript ', 3);
+console.log('Language', language);
