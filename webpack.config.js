@@ -4,9 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let production = process.env.NODE_ENV === 'production';
 
 let config = {
-    entry: ['./src/index', './src/home'],
+    // entry: ['./src/index', './src/home'], // combine multiple entry points
+    entry: { // separate multiple entry points
+        index: './src/index.ts',
+        home: './src/home.ts',
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
     },
     devtool: "inline-source-map",
@@ -40,6 +44,7 @@ let config = {
         new HtmlWebpackPlugin({
             template: './index.html' // source html
         }),
+        // new HtmlWebpackPlugin() // auto generate index.html
     ],
 };
 
