@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let production = process.env.NODE_ENV === 'production';
 
 let config = {
-    entry: ['./src/index.js', './src/other.js'],
+    entry: ['./src/index', './src/home'],
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -25,8 +25,16 @@ let config = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                use: ['ts-loader']
             }
         ]
+    },
+    resolve: {
+        extensions: ['.ts', '.js']
     },
     plugins: [
         new HtmlWebpackPlugin({
