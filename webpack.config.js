@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // extract css to files
 const CopyPlugin = require('copy-webpack-plugin'); // copy files to dist folder
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // analyze bundle size
+const HelloWorldPlugin = require('./src/hw-plugin/index.js');
 
 let production = process.env.NODE_ENV === 'production';
 
@@ -84,6 +85,7 @@ let config = {
         //     ]
         // })
         // new BundleAnalyzerPlugin(),
+        new HelloWorldPlugin({options: true})
     ],
 };
 
