@@ -52,22 +52,12 @@ let config = {
                 // removing that to use the plugin instead
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
-            // {
-            //     test: /\.(png|svg|jpg|jpeg|gif)$/i,
-            //     exclude: /node_modules/,
-            //     type: 'asset/inline', // inline images does not require generators
-            //     // generator: {
-            //     //     filename: 'pictures/logos/[hash]-[name][ext]'
-            //     // }
-            // },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 exclude: /node_modules/,
-                type: 'asset',
-                parser: {
-                    dataUrlCondition: {
-                        maxSize: 20 * 1024 // 20kb
-                    }
+                type: 'asset/resource',
+                generator: {
+                    filename: 'pictures/logos/[hash]-[name][ext]'
                 }
             }
         ]
