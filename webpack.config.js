@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // extract css to files
 const CopyPlugin = require('copy-webpack-plugin'); // copy files to dist folder
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // analyze bundle size
 
 let production = process.env.NODE_ENV === 'production';
 
@@ -76,6 +77,7 @@ let config = {
         //         { from: './src/images', to: 'images' },
         //     ]
         // })
+        new BundleAnalyzerPlugin(),
     ],
 };
 
