@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // extract css to files
 
 let production = process.env.NODE_ENV === 'production';
 
@@ -18,7 +19,7 @@ let config = {
     mode: 'development',
     devServer: {
         // liveReload: false,
-        watchFiles: ['src/**/', 'index.html', 'src/**/css/*.scss'], // watch for changes in these files
+        watchFiles: ['src/**/', 'index.html', 'src/**/*.scss'],
         static: './dist'
     },
     module: {
@@ -41,7 +42,9 @@ let config = {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                // style-loader puts the css in the JS bundle.
+                // removing that to use the plugin instead
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             }
         ]
     },
@@ -53,6 +56,7 @@ let config = {
             template: './index.html' // source html
         }),
         // new HtmlWebpackPlugin() // auto generate index.html
+        new MiniCssExtractPlugin({ filename: 'bundle.css'})
     ],
 };
 
