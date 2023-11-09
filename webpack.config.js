@@ -45,7 +45,7 @@ let config = {
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                use: ['ts-loader']
+                use: ['ts-loader', path.resolve("./src/gen-loader/index.js")]
             },
             {
                 test: /\.html$/,
