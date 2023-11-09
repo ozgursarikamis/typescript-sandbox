@@ -18,7 +18,7 @@ let config = {
     mode: 'development',
     devServer: {
         // liveReload: false,
-        watchFiles: ['src/**/', 'index.html'], // watch for changes in these files
+        watchFiles: ['src/**/', 'index.html', 'src/**/css/*.css'], // watch for changes in these files
         static: './dist'
     },
     module: {
@@ -37,6 +37,11 @@ let config = {
                 test: /\.ts$/,
                 exclude: /node_modules/,
                 use: ['ts-loader']
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ['style-loader', 'css-loader'],
             }
         ]
     },
