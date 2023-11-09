@@ -41,6 +41,11 @@ let config = {
                 use: ['ts-loader']
             },
             {
+                test: /\.html$/,
+                exclude: /node_modules/,
+                use: ['html-loader']
+            },
+            {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 // style-loader puts the css in the JS bundle.
@@ -52,7 +57,7 @@ let config = {
                 exclude: /node_modules/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'images/[name][ext]'
+                    filename: 'pictures/logos/[name][ext]'
                 }
             }
         ]
