@@ -55,10 +55,10 @@ let config = {
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 exclude: /node_modules/,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'pictures/logos/[hash]-[name][ext]'
-                }
+                type: 'asset/inline', // inline images does not require generators
+                // generator: {
+                //     filename: 'pictures/logos/[hash]-[name][ext]'
+                // }
             }
         ]
     },
