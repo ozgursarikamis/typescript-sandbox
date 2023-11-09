@@ -5,3 +5,10 @@ body {
     padding: 1rem;
     border: 5px solid yellowgreen;
 }
+
+.bg-image {
+   background-image: url('../images/bg.png'); // this works fine with webpack
+//    background-image: url("https://vitejs.dev/logo-with-shadow.png"); // this is converted into an inline image
+   width: 40rem;
+   height: 40rem;
+}
