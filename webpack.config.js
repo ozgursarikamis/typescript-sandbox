@@ -46,6 +46,14 @@ let config = {
                 // style-loader puts the css in the JS bundle.
                 // removing that to use the plugin instead
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                exclude: /node_modules/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name][ext]'
+                }
             }
         ]
     },
@@ -58,11 +66,11 @@ let config = {
         }),
         // new HtmlWebpackPlugin() // auto generate index.html
         new MiniCssExtractPlugin({ filename: 'bundle.css'}),
-        new CopyPlugin({
-            patterns: [
-                { from: './src/images', to: 'images' },
-            ]
-        })
+        // new CopyPlugin({
+        //     patterns: [
+        //         { from: './src/images', to: 'images' },
+        //     ]
+        // })
     ],
 };
 
