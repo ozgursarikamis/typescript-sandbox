@@ -9,7 +9,7 @@ function notificationRegister(email: string) {
 }
 
 function getUsers() {
-    return fetch("api/users")
+    return fetch("https://jsonplaceholder.typicode.com/users")
         .then(response => response.json())
         .then(json => json)
         .then(users => {
@@ -17,6 +17,6 @@ function getUsers() {
         })
 }
 
-getUsers();
+// getUsers();
 
 notificationRegister("test@mail.com");
