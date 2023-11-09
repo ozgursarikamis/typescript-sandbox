@@ -1,5 +1,5 @@
 import { log } from "./util";
-import './css/main.css';
+import './css/main.scss';
 
 function notificationRegister(email: string) {
     log("registering... " +  email)
