@@ -22,7 +22,13 @@ let config = {
     devServer: {
         // liveReload: false,
         watchFiles: ['src/**/', 'index.html', 'src/**/*.scss'],
-        static: './dist'
+        static: './dist',
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000/',
+                pathRewrite: {'^/api' : ''}
+            }
+        }
     },
     module: {
         rules: [
@@ -77,7 +83,7 @@ let config = {
         //         { from: './src/images', to: 'images' },
         //     ]
         // })
-        new BundleAnalyzerPlugin(),
+        // new BundleAnalyzerPlugin(),
     ],
 };
 
