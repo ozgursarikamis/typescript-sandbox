@@ -57,7 +57,7 @@ let config = {
                 exclude: /node_modules/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'pictures/logos/[name][ext]'
+                    filename: 'pictures/logos/[hash]-[name][ext]'
                 }
             }
         ]
