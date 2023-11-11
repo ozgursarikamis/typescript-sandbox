@@ -23,3 +23,9 @@ export class Person {
 }
 
 new Person("Ozzy").greet();
+
+// Types of TypeScript Decorators
+// Class Decorators
+// Method Decorators
+// Property Decorators
+// Parameter Decorators
