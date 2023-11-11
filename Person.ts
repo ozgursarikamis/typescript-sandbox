@@ -5,7 +5,11 @@ export class Person {
     }
 
     greet() {
+        console.log("ENTERING THE METHOD");
         console.log(`Hello, ${this.name}`);
+        console.log("EXITING THE METHOD");
+        // This pattern is fairly common.
+        // It sure would be nice if there was a way we could do this for every method!
     }
 }
 
