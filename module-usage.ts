@@ -1,5 +1,5 @@
 
-// Path: module-sample2.ts
+// Path: module-sample.ts (module) (optional)
 
 // Import the function
 
