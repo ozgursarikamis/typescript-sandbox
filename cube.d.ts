@@ -1,0 +1,1 @@
+export function cube(x: number): number;
