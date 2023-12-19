@@ -67,3 +67,15 @@ supplier2.isInShortList = () => false;
 console.log(signContract_InOperator(supplier2));
 console.groupEnd();
 console.log();
+
+console.group('USER-DEFINED TYPE GUARDS');
+console.log();
+function isCustomer(partner: any): partner is Customer {
+    return partner instanceof Customer;
+}
+
+function isSupplier(partner: any): partner is Supplier {
+    return partner instanceof Supplier;
+}
+console.groupEnd();
+console.log();
