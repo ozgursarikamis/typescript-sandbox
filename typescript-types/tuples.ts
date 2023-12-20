@@ -26,3 +26,17 @@ function destructureTuple(stringHash: [string, number]) {
 
 const x = destructureTuple(["hello", 42]);
 console.log("x", x);
+
+type personType = [string, number];
+const ZnKeyValuePair: personType = ["Zn", 1];
+const HlmKeyValuePair: personType = ["Hlm", 2];
+const OzKeyValuePair: personType = ["Oz", 3];
+
+const [ZnPersonCode] = ZnKeyValuePair;
+console.log({ ZnPersonCode });
+
+const [HlmPersonCode, HlmPersonNumber] = HlmKeyValuePair;
+console.log({ HlmPersonCode, PersonNumber: HlmPersonNumber })
+
+const [ZnPersonCode2, ZnPersonNumber] = ZnKeyValuePair;
+console.log({ ZnPersonCode2, ZnPersonNumber });
