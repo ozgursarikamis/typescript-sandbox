@@ -11,3 +11,12 @@ const person = merge(
 )
 
 console.log(person);
+
+function prop<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key];
+}
+
+const john = { name: 'John', age: 24 };
+const johns_age = prop(john, 'age');
+const johns_name = prop(john, 'name');
+console.log("john", { johns_name, johns_age });
