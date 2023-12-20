@@ -14,3 +14,13 @@ const person: person = {
     firstName: 'John',
     lastName: 'Doe',
 }
+
+type TypeConstraints = {
+    [key: string]: number;
+}
+
+const constraintType: TypeConstraints = {
+    age: 1,
+    // experience: "10" // error
+    experience: 10
+}
